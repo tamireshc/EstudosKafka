@@ -30,6 +30,6 @@ public class StrConsumerListener {
     // Este listener escuta as mensagens de todas as particoes do topico str-topic e valida se a mensagem contem a palavra "Teste"
     @KafkaListener(groupId = "group-03", containerFactory = "validMessageContainerFactory", topics = "str-topic")
     public void listener4(String message) {
-        log.info("Received message listener 2: " + message);
+        log.info("Received message listener 3: " + message);
     }
 }
