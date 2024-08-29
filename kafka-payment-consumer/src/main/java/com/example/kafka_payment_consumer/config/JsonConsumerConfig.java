@@ -10,9 +10,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
-import org.springframework.kafka.support.converter.BatchMessageConverter;
-import org.springframework.kafka.support.converter.BatchMessagingMessageConverter;
-import org.springframework.kafka.support.converter.JsonMessageConverter;
 
 import java.util.HashMap;
 
