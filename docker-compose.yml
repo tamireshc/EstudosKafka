@@ -36,6 +36,27 @@ services:
     environment:
       KAFKA_BROKERCONNECT: kafka:29092
 
+  payment:
+    image: mspaymentservice:latest
+    networks:
+      - broker-kafka
+    depends_on:
+      - kafka
+    ports:
+      - "8083:8083"
+    environment:
+      KAFTA_HOST: kafka:29092
+
+  consumer:
+    image: mspaymentconsumer:latest
+    networks:
+      - broker-kafka
+    depends_on:
+      - kafka
+      - payment
+    environment:
+      KAFTA_HOST: kafka:29092
+
 networks:
   broker-kafka:
     driver: bridge
